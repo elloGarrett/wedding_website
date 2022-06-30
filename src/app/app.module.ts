@@ -9,6 +9,9 @@ import { AppFooterComponent } from './shared/app-footer/app-footer.component';
 import { HomePageComponent } from './features/home-page/home-page.component';
 import { RsvpComponent } from './features/rsvp/rsvp.component';
 import { RouterModule } from '@angular/router';
+import { PhotosPageComponent } from './features/photos-page/photos-page.component';
+import { WeddingPartyPageComponent } from './features/wedding-party-page/wedding-party-page.component';
+import { RegistryPageComponent } from './features/registry-page/registry-page.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +20,21 @@ import { RouterModule } from '@angular/router';
     AppNavComponent,
     AppFooterComponent,
     HomePageComponent,
-    RsvpComponent
+    RsvpComponent,
+    PhotosPageComponent,
+    WeddingPartyPageComponent,
+    RegistryPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      {path: '', component: HomePageComponent},
-      {path: 'rsvp', component: RsvpComponent},
+      {path: 'rsvp', component: HomePageComponent},
+      {path: 'photos', component: PhotosPageComponent},
+      {path: 'wedding-party', component: WeddingPartyPageComponent},
+      {path: 'registry', component: RegistryPageComponent},
+      {path: '', redirectTo: '/rsvp', pathMatch: 'full'},
+      // { path: '**', component: PageNotFoundComponent }
     ])
   ],
   providers: [],

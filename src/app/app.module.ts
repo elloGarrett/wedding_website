@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
 import { PhotosPageComponent } from './features/photos-page/photos-page.component';
 import { WeddingPartyPageComponent } from './features/wedding-party-page/wedding-party-page.component';
 import { RegistryPageComponent } from './features/registry-page/registry-page.component';
-import { GalleryLightboxComponent } from './shared/gallery-lightbox/gallery-lightbox.component';
+import { LightboxComponent } from './shared/lightbox/lightbox.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { GalleryLightboxComponent } from './shared/gallery-lightbox/gallery-ligh
     PhotosPageComponent,
     WeddingPartyPageComponent,
     RegistryPageComponent,
-    GalleryLightboxComponent
+    LightboxComponent
   ],
   imports: [
     BrowserModule,

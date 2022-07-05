@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, HostListener, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 @Component({
@@ -8,9 +8,25 @@ import { DOCUMENT } from '@angular/common';
 })
 export class LightboxComponent{
   base: string = "/assets/photos/";
-  slideIndex:number = 1;
+  testBase: string = "/assets/test_photos/"
+  slideIndex: number = 1;
 
   constructor(@Inject(DOCUMENT) public _document:Document){
+    
+  }
+
+  // Allows for keyboard navigation in the lightbox
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    if (event.key === 'Escape') {
+      this.closeModal();
+    }
+    else if (event.key === 'ArrowLeft') {
+      this.plusSlides(-1);
+    }
+    else if (event.key === 'ArrowRight') {
+      this.plusSlides(1);
+    }
   }
 
   public openModal(): void {
@@ -26,7 +42,6 @@ export class LightboxComponent{
       modal.style.display = "none";
     } 
   }
-  
   public plusSlides(n: number) {
     this.showSlides(this.slideIndex += n);
   }
@@ -51,9 +66,7 @@ export class LightboxComponent{
           dots[i].className = dots[i].className.replace(" active", "");
       }
       slides[this.slideIndex-1].style.display = "block";
-      dots[this.slideIndex-1].className += " active";
+      // dots[this.slideIndex-1].className += " active";
     }
-      
   }
-
 }

@@ -1,64 +1,132 @@
-<!-- Images used to open the lightbox -->
-<div class="row">
-    <div class="column">
-      <img src="{{base}}img1.jpg" (click)="openModal();currentSlide(1)" class="hover-shadow">
+<body>
+  <!-- Images used to open the lightbox -->
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col m4 s12 w3-margin-bottom">
+      <img src="{{testBase}}1.jpg" (click)="openModal();currentSlide(1);" class="w3-image w3-round hover-shadow">
     </div>
-    <div class="column">
-      <img src="{{base}}img2.jpg" (click)="openModal();currentSlide(2)" class="hover-shadow">
+    <div class="container"></div>
+    <div class="w3-col m4 s12 w3-margin-bottom">
+      <img src="{{testBase}}2.jpg" (click)="openModal();currentSlide(2)" class="w3-image w3-round hover-shadow">
     </div>
-    <div class="column">
-      <img src="{{base}}img3.jpg" (click)="openModal();currentSlide(3)" class="hover-shadow">
+    <div class="w3-col m4 s12 w3-margin-bottom">
+      <img src="{{testBase}}4.JPG" (click)="openModal();currentSlide(3)" class="w3-image w3-round hover-shadow">
     </div>
-    <div class="column">
-      <img src="{{base}}img4.jpg" (click)="openModal();currentSlide(4)" class="hover-shadow">
+    <div class="w3-col m4 s12 w3-margin-bottom">
+      <img src="{{testBase}}3.JPG" (click)="openModal();currentSlide(4)" class="w3-image w3-round hover-shadow">
+    </div>
+    <div class="w3-col m4 s12 w3-margin-bottom">
+      <img src="{{testBase}}5.JPG" (click)="openModal();currentSlide(5)" class="w3-image w3-round hover-shadow">
+    </div>
+    <div class="w3-col m4 s12 w3-margin-bottom">
+      <img src="{{testBase}}16.jpg" (click)="openModal();currentSlide(6)" class="w3-image w3-round hover-shadow">
+    </div>
+    <div class="w3-col m4 s12 w3-margin-bottom">
+      <img src="{{testBase}}6.JPG" (click)="openModal();currentSlide(7)" class="w3-image w3-round hover-shadow">
+    </div>
+    <div class="w3-col m4 s12 w3-margin-bottom">
+      <img src="{{testBase}}7.jpg" (click)="openModal();currentSlide(8)" class="w3-image w3-round hover-shadow">
+    </div>
+    <div class="w3-col m4 s12 w3-margin-bottom">
+      <img src="{{testBase}}8.jpg" (click)="openModal();currentSlide(9)" class="w3-image w3-round hover-shadow">
+    </div>
+    <div class="w3-col m4 s12 w3-margin-bottom">
+      <img src="{{testBase}}9.JPEG" (click)="openModal();currentSlide(10)" class="w3-image w3-round hover-shadow">
+    </div>
+    <div class="w3-col m4 s12 w3-margin-bottom">
+      <img src="{{testBase}}10.jpg" (click)="openModal();currentSlide(11)" class="w3-image w3-round hover-shadow">
+    </div>
+    <div class="w3-col m4 s12 w3-margin-bottom">
+      <img src="{{testBase}}11.JPG" (click)="openModal();currentSlide(12)" class="w3-image w3-round hover-shadow">
+    </div>
+    <div class="w3-col m4 s12 w3-margin-bottom">
+      <img src="{{testBase}}12.JPG" (click)="openModal();currentSlide(13)" class="w3-image w3-round hover-shadow">
+    </div>
+    <div class="w3-col m4 s12 w3-margin-bottom">
+      <img src="{{testBase}}13.jpg" (click)="openModal();currentSlide(14)" class="w3-image w3-round hover-shadow">
+    </div>
+    <div class="w3-col m4 s12 w3-margin-bottom">
+      <img src="{{testBase}}14.jpg" (click)="openModal();currentSlide(15)" class="w3-image w3-round hover-shadow">
+    </div>
+    <div class="w3-col m4 s12 w3-margin-bottom">
+      <img src="{{testBase}}15.jpg" (click)="openModal();currentSlide(16)" class="w3-image w3-round hover-shadow">
     </div>
   </div>
-  
-  <!-- The Modal/Lightbox -->
+    
+  <!-- The Modal/Lightbox --> 
   <div id="myModal" class="modal">
     <span class="close cursor" (click)="closeModal()">&times;</span>
     <div class="modal-content">
-  
       <div class="mySlides">
-        <div class="numbertext">1 / 4</div>
-        <img src="{{base}}img1_wide.jpg" style="width:100%">
+        <img src="{{testBase}}1.jpg" style="width:100%">
       </div>
-  
       <div class="mySlides">
-        <div class="numbertext">2 / 4</div>
-        <img src="{{base}}img2_wide.jpg" style="width:100%">
+        <img src="{{testBase}}2.jpg" style="width:100%">
       </div>
-  
       <div class="mySlides">
-        <div class="numbertext">3 / 4</div>
-        <img src="{{base}}img3_wide.jpg" style="width:100%">
+        <img src="{{testBase}}4.JPG" style="width:100%">
       </div>
-  
       <div class="mySlides">
-        <div class="numbertext">4 / 4</div>
-        <img src="{{base}}img4_wide.jpg" style="width:100%">
+        <img src="{{testBase}}3.JPG" style="width:100%">
       </div>
-  
+      <div class="mySlides">
+        <img src="{{testBase}}5.JPG" style="width:100%">
+      </div>
+      <div class="mySlides">
+        <img src="{{testBase}}16.jpg" style="width:100%">
+      </div>
+      <div class="mySlides">
+        <img src="{{testBase}}6.JPG" style="width:100%">
+      </div>
+      <div class="mySlides">
+        <img src="{{testBase}}7.jpg" style="width:100%">
+      </div>
+      <div class="mySlides">
+        <img src="{{testBase}}8.jpg" style="width:100%">
+      </div>
+      <div class="mySlides">
+        <img src="{{testBase}}9.JPEG" style="width:100%">
+      </div>
+      <div class="mySlides">
+        <img src="{{testBase}}10.jpg" style="width:100%">
+      </div>
+      <div class="mySlides">
+        <img src="{{testBase}}11.JPG" style="width:100%">
+      </div>
+      <div class="mySlides">
+        <img src="{{testBase}}12.JPG" style="width:100%">
+      </div>
+      <div class="mySlides">
+        <img src="{{testBase}}13.jpg" style="width:100%">
+      </div>
+      <div class="mySlides">
+        <img src="{{testBase}}14.jpg" style="width:100%">
+      </div>
+      <div class="mySlides">
+        <img src="{{testBase}}15.jpg" style="width:100%">
+      </div>
+
+
       <!-- Next/previous controls -->
       <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
       <a class="next" (click)="plusSlides(1)">&#10095;</a>
-  
-  
+
+      <!-- <div class="caption-container">
+        <p id="caption"></p>
+      </div> -->
+
       <!-- Thumbnail image controls -->
-      <div class="column">
-        <img class="demo" src="{{base}}img1.jpg" (click)="currentSlide(1)" alt="Nature">
+      <!-- <div class="column">
+        <img class="demo cursor w3-round" src="{{testBase}}1.jpg" style="width:100%" (click)="currentSlide(1)" alt="Nature">
       </div>
-  
       <div class="column">
-        <img class="demo" src="{{base}}img2.jpg" (click)="currentSlide(2)" alt="Snow">
+        <img class="demo cursor w3-round" src="{{testBase}}2.jpg" style="width:100%" (click)="currentSlide(2)" alt="Snow">
       </div>
-  
       <div class="column">
-        <img class="demo" src="{{base}}img3.jpg" (click)="currentSlide(3)" alt="Mountains">
+        <img class="demo cursor w3-round" src="{{testBase}}4.JPG" style="width:100%" (click)="currentSlide(3)" alt="Mountains">
       </div>
-  
       <div class="column">
-        <img class="demo" src="{{base}}img4.jpg" (click)="currentSlide(4)" alt="Lights">
-      </div>
-    </div>
+        <img class="demo cursor w3-round" src="{{testBase}}3.JPG" style="width:100%" (click)="currentSlide(4)" alt="Lights">
+      </div>-->
+    </div> 
   </div>
+</body>

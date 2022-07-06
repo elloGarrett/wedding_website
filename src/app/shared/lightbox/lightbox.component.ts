@@ -1,18 +1,42 @@
-import { Component, HostListener, Inject } from '@angular/core';
+import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { Observable, startWith } from 'rxjs';
 
 @Component({
   selector: 'app-lightbox',
   templateUrl: './lightbox.component.html',
   styleUrls: ['./lightbox.component.scss']
 })
-export class LightboxComponent{
-  base: string = "/assets/photos/";
-  testBase: string = "/assets/test_photos/"
+export class LightboxComponent implements OnInit{
+  // base: string = "/assets/photos/";
+  base: string = "/assets/test_photos/"
   slideIndex: number = 1;
+  isMobile:boolean = false;
+  photos = [
+    {path: `${this.base}0.jpg`, alt: 'img'},
+    {path: `${this.base}1.jpg`, alt: 'img'},
+    {path: `${this.base}2.jpg`, alt: 'img'},
+    {path: `${this.base}3.jpg`, alt: 'img'},
+    {path: `${this.base}4.jpg`, alt: 'img'},
+    {path: `${this.base}5.jpg`, alt: 'img'},
+    {path: `${this.base}6.jpg`, alt: 'img'},
+    {path: `${this.base}7.jpg`, alt: 'img'},
+    {path: `${this.base}8.jpg`, alt: 'img'},
+    {path: `${this.base}9.jpg`, alt: 'img'},
+    {path: `${this.base}10.jpg`, alt: 'img'},
+    {path: `${this.base}11.jpg`, alt: 'img'},
+    {path: `${this.base}12.jpg`, alt: 'img'},
+    {path: `${this.base}13.jpg`, alt: 'img'},
+    {path: `${this.base}14.jpg`, alt: 'img'},
+    {path: `${this.base}15.jpg`, alt: 'img'}
+  ];
 
   constructor(@Inject(DOCUMENT) public _document:Document){
     
+  }
+
+  ngOnInit() {
+    window.onresize = () => this.isMobile = window.innerWidth <= 600;
   }
 
   // Allows for keyboard navigation in the lightbox

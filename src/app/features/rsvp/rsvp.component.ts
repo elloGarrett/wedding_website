@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-rsvp',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RsvpComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(DOCUMENT) public _document:Document){}
 
   ngOnInit(): void {
+  }
+
+  public closeRsvp(): void {
+    const modal = this._document.getElementById("id01");
+    if(modal != null){
+      modal.style.display = "none";
+    } 
   }
 
 }

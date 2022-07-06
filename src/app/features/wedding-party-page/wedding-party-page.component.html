@@ -1,1 +1,31 @@
-<p>wedding-party-page works!</p>
+<div class="w3-container w3-padding-64 w3-pale-red w3-animate-opacity">
+    <div class="w3-content">
+        <h1 class="w3-center w3-text-grey w3-grayscale-min"><b>Wedding Party</b></h1>
+
+        <!-- PC View -->
+        <div class="w3-row-padding w3-animate-opacity" *ngIf="!isMobile">
+            <div class="w3-half w3-center" >
+              <div class="w3-col l12 w3-margin-top" *ngFor="let maid of maids; let i = index">
+                <img class="w3-image w3-round hover-shadow" src="{{maid.path}}" *ngIf="i % 2 == 1">
+              </div>
+            </div>
+            <div class="w3-half" >
+              <div class="w3-col l12 w3-margin-top" *ngFor="let maid of maids; let i = index">
+                <img class="w3-image w3-round hover-shadow" src="{{maid.path}}" *ngIf="i % 2 == 0">
+              </div>
+            </div>
+        </div>
+
+        <!-- Mobile View -->
+        <div class="w3-row-padding w3-animate-opacity" *ngIf="isMobile">
+            <div class="w3-col l12 w3-margin-top" *ngFor="let groom of grooms; let i = index">
+                <img class="w3-image w3-round hover-shadow" src="{{groom.path}}">
+            </div>
+        </div>
+        
+    </div> 
+</div>
+
+
+  
+  

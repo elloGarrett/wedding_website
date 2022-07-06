@@ -1,0 +1,23 @@
+.border {
+  border-bottom: 1px solid #222;
+  margin: auto;
+  width: 150px;
+}
+
+.shoutout {
+    p {margin: 0;}
+}
+
+.flower1{
+    width:25%;
+    margin:0px;
+}
+
+/* Modal Content */
+@media screen and (max-width: 600px) {
+  .flower1{
+    width:40%;
+    margin:0px;
+  }
+}
+    

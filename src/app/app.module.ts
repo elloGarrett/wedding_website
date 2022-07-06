@@ -13,6 +13,8 @@ import { PhotosPageComponent } from './features/photos-page/photos-page.componen
 import { WeddingPartyPageComponent } from './features/wedding-party-page/wedding-party-page.component';
 import { RegistryPageComponent } from './features/registry-page/registry-page.component';
 import { LightboxComponent } from './shared/lightbox/lightbox.component';
+import { SecretPageComponent } from './features/secret-page/secret-page.component';
+import { NoteblockComponent } from './shared/noteblock/noteblock.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { LightboxComponent } from './shared/lightbox/lightbox.component';
     PhotosPageComponent,
     WeddingPartyPageComponent,
     RegistryPageComponent,
-    LightboxComponent
+    LightboxComponent,
+    SecretPageComponent,
+    NoteblockComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +39,7 @@ import { LightboxComponent } from './shared/lightbox/lightbox.component';
       {path: 'photos', component: PhotosPageComponent},
       {path: 'wedding-party', component: WeddingPartyPageComponent},
       {path: 'registry', component: RegistryPageComponent},
+      {path: 'secret', component: SecretPageComponent},
       {path: '', redirectTo: '/rsvp', pathMatch: 'full'},
       // { path: '**', component: PageNotFoundComponent }
     ])

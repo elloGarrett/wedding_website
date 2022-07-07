@@ -1,25 +1,25 @@
 <!-- Images used to open the lightbox in pc view -->
 <div class="w3-row-padding w3-animate-opacity" *ngIf="!isMobile">
   <div class="w3-third" >
-    <div class="w3-col l12 w3-margin-bottom" *ngFor="let photo of photos; let i = index">
-      <img class="w3-image w3-round hover-shadow" src="{{photo.path}}" (click)="openModal();currentSlide(i+1);" *ngIf="i % 3 == 0">
+    <div class="w3-col l12" *ngFor="let photo of photos; let i = index;">
+      <img class="w3-image w3-round hover-shadow w3-margin-top" src="{{photo.path}}" (click)="openModal();currentSlide(i+1);" *ngIf="i % 3 == 0">
     </div>
   </div>
   <div class="w3-third" >
-    <div class="w3-col l12 w3-margin-bottom" *ngFor="let photo of photos; let i = index">
-      <img class="w3-image w3-round hover-shadow" src="{{photo.path}}" (click)="openModal();currentSlide(i+1);" *ngIf="i % 3 == 1">
+    <div class="w3-col l12" *ngFor="let photo of photos; let i = index;">
+      <img class="w3-image w3-round hover-shadow w3-margin-top" src="{{photo.path}}" (click)="openModal();currentSlide(i+1);" *ngIf="i % 3 == 1">
     </div>
   </div>
   <div class="w3-third" >
-    <div class="w3-col l12 w3-margin-bottom" *ngFor="let photo of photos; let i = index">
-      <img class="w3-image w3-round hover-shadow" src="{{photo.path}}" (click)="openModal();currentSlide(i+1);" *ngIf="i % 3 == 2">
+    <div class="w3-col l12" *ngFor="let photo of photos; let i = index;">
+      <img class="w3-image w3-round hover-shadow  w3-margin-top" src="{{photo.path}}" (click)="openModal();currentSlide(i+1);" *ngIf="i % 3 == 2">
     </div>
   </div>
 </div>
 
 <!-- Images used to open the lightbox in mobile view -->
 <div class="w3-row-padding w3-animate-opacity" *ngIf="isMobile">
-  <div class="w3-col l12 w3-margin-top" *ngFor="let photo of photos; let i = index">
+  <div class="w3-col l12 w3-margin-top" *ngFor="let photo of photos; let i = index;">
     <img class="w3-image w3-round hover-shadow" src="{{photo.path}}" (click)="openModal();currentSlide(i+1);">
   </div>
 </div>
@@ -28,32 +28,17 @@
 <div id="myModal" class="modal">
   <span class="close cursor" (click)="closeModal()">&times;</span>
   <div class="modal-content">
-    <div class="mySlides" *ngFor="let photo of photos; let i = index">
-      <img class="w3-image w3-round" src="{{base}}{{i}}.jpg">
-      <!--  -->
+    <div class="mySlides" *ngFor="let photo of photos; let i = index;">
+      <img class="w3-image w3-round" src="{{photo.path}}">
     </div>
-
 
     <!-- Next/previous controls -->
     <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
     <a class="next" (click)="plusSlides(1)">&#10095;</a>
 
-    <!-- <div class="caption-container">
-      <p id="caption"></p>
-    </div> -->
-
     <!-- Thumbnail image controls -->
-    <!-- <div class="column">
-      <img class="demo cursor w3-round" src="{{base}}1.jpg" style="width:100%" (click)="currentSlide(1)" alt="Nature">
+    <div class="column" *ngFor="let photo of photos; let i = index;">
+      <img class="demo cursor w3-round" src="{{photo.path}}" style="width:100%" (click)="currentSlide(i+1)">
     </div>
-    <div class="column">
-      <img class="demo cursor w3-round" src="{{base}}2.jpg" style="width:100%" (click)="currentSlide(2)" alt="Snow">
-    </div>
-    <div class="column">
-      <img class="demo cursor w3-round" src="{{base}}4.JPG" style="width:100%" (click)="currentSlide(3)" alt="Mountains">
-    </div>
-    <div class="column">
-      <img class="demo cursor w3-round" src="{{base}}3.JPG" style="width:100%" (click)="currentSlide(4)" alt="Lights">
-    </div>-->
   </div> 
 </div>

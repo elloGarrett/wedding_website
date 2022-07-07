@@ -3,7 +3,7 @@
     <h1>HOPE YOU CAN MAKE IT!</h1>
     <p class="w3-large">Kindly Respond By (ENTER DATE HERE)</p>
     <p class="w3-xlarge">
-      <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-round w3-red w3-opacity w3-hover-opacity-off" style="padding:8px 60px">RSVP</button>
+      <button (click)="openRsvp()" class="w3-button w3-round w3-red w3-opacity w3-hover-opacity-off" style="padding:8px 60px">RSVP</button>
     </p>
   </div>
   
@@ -14,22 +14,25 @@
       <span class="close cursor" (click)="closeRsvp()">&times;</span>
        <h1 class="w3-wide">CAN YOU COME?</h1>
        <p>We really hope you can make it.</p>
+
+       <!-- Form call -->
        <iframe name="dummyframe" id="dummyframe" style="display: none"></iframe>
        <form action="https://sheetdb.io/api/v1/0re73qyaju2dj" target="dummyframe" method="POST" id="sheetdb-form">
-         <input class="w3-input w3-border" type="text" placeholder="Name(s)" name="data[Guest List]">
+          <!-- Input boxes -->
+         <input id="guestList" class="w3-input w3-border" type="text" (keyup)="inputEntries()" placeholder="Name(s)" name="data[Guest List]">
+         <br>
+         <input id="count" class="w3-input w3-border" type="number" (keyup)="inputEntries()" placeholder="Number of Attendees" name="data[Count]">
          <p><i>Sincerely, Garrett & Claire</i></p>
          <div class="w3-row">
+           <!-- Submit buttons -->
            <div class="w3-half">
-             
-             <button onclick="document.getElementById('id01').style.display='none'" value="yes" name="data[Attendance]" type="sumbit" class="w3-button w3-block w3-green">Going</button>
+             <button id="yesSubmit" onclick="document.getElementById('id01').style.display='none'" value="yes" name="data[Attendance]" type="sumbit" class="w3-button w3-block w3-green">Going</button>
            </div>
            <div class="w3-half">
-             <button onclick="document.getElementById('id01').style.display='none'" value="no" name="data[Attendance]" type="submit" class="w3-button w3-block w3-red">Can't come</button>
+             <button id="noSubmit" onclick="document.getElementById('id01').style.display='none'" value="no" name="data[Attendance]" type="submit" class="w3-button w3-block w3-red">Can't come</button>
            </div> 
          </div>        
        </form>
-       
- 
          <script>
            var form = document.getElementById('sheetdb-form');
            form.addEventListener("submit", e => {
@@ -45,7 +48,6 @@
              });
            });
          </script>
-        
       </div>
     </div>
   </div>

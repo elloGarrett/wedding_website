@@ -41,6 +41,7 @@ import { NoteblockComponent } from './shared/noteblock/noteblock.component';
       {path: 'registry', component: RegistryPageComponent},
       {path: 'secret', component: SecretPageComponent},
       {path: '', redirectTo: '/rsvp', pathMatch: 'full'},
+      {path: '**', redirectTo: '/rsvp', pathMatch: 'full'},
       // { path: '**', component: PageNotFoundComponent }
     ])
   ],

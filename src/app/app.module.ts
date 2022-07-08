@@ -15,6 +15,7 @@ import { RegistryPageComponent } from './features/registry-page/registry-page.co
 import { LightboxComponent } from './shared/lightbox/lightbox.component';
 import { SecretPageComponent } from './features/secret-page/secret-page.component';
 import { NoteblockComponent } from './shared/noteblock/noteblock.component';
+import { ImgLazyLoadingDirective } from './shared/img-lazy-loading.directive';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NoteblockComponent } from './shared/noteblock/noteblock.component';
     RegistryPageComponent,
     LightboxComponent,
     SecretPageComponent,
-    NoteblockComponent
+    NoteblockComponent,
+    ImgLazyLoadingDirective
   ],
   imports: [
     BrowserModule,

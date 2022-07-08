@@ -1,3 +1,7 @@
+.div-1 {
+  background-color: #F2E1E1;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -19,28 +23,20 @@
 
 img {
   border-radius: 50%;
-  position: relative;
   margin: auto;
-  padding: 0;
-  width: 40%; //Change me when final pictures arrive
-  max-width: 1200px;
-
-  // 
-  // position: relative;
-  // width:50%;
-  // margin: auto;
-  // padding: 0;
+  padding: 70px;
 }
 
 @media screen and (max-width: 600px) {
-  img {
-    border-radius: 50%;
-    position: relative;
-    width:100%;
-    margin: auto;
-    padding: 0;
+  .hidden-mobile {
+    display: none;
   }
+
+  // img {
+  //   border-radius: 50%;
+  //   position: relative;
+  //   width:100%;
+  //   margin: auto;
+  //   padding: 0;
+  // }
 }
-
-
-

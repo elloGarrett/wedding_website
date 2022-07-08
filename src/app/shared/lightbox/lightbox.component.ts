@@ -1,4 +1,4 @@
-import { Component, HostListener, Inject, OnInit } from '@angular/core';
+import { Component, HostListener, Inject, Input, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 @Component({
@@ -7,32 +7,25 @@ import { DOCUMENT } from '@angular/common';
   styleUrls: ['./lightbox.component.scss']
 })
 export class LightboxComponent implements OnInit{
-  // base: string = "/assets/photos/";
-  base: string = "/assets/test_photos/"
-  slideIndex: number = 1;
-  isMobile:boolean = false;
-  photos = [
-    {path: `${this.base}0.jpg`, alt: 'img'},
-    {path: `${this.base}1.jpg`, alt: 'img'},
-    {path: `${this.base}2.jpg`, alt: 'img'},
-    {path: `${this.base}3.jpg`, alt: 'img'},
-    {path: `${this.base}4.jpg`, alt: 'img'},
-    {path: `${this.base}5.jpg`, alt: 'img'},
-    {path: `${this.base}6.jpg`, alt: 'img'},
-    {path: `${this.base}7.jpg`, alt: 'img'},
-    {path: `${this.base}8.jpg`, alt: 'img'},
-    {path: `${this.base}9.jpg`, alt: 'img'},
-    {path: `${this.base}10.jpg`, alt: 'img'},
-    {path: `${this.base}11.jpg`, alt: 'img'},
-    {path: `${this.base}12.jpg`, alt: 'img'},
-    {path: `${this.base}13.jpg`, alt: 'img'},
-    {path: `${this.base}14.jpg`, alt: 'img'},
-    {path: `${this.base}15.jpg`, alt: 'img'}
-  ];
+  slideIndex = 0;
+  isMobile = false;
 
-  constructor(@Inject(DOCUMENT) public _document:Document){}
+  // Low quality images for preview and thumbnails
+  @Input() photosLQ: Array<any> = [];
+
+  // High quality images for lightbox
+  @Input() photosHD: Array<any> = [];
+  
+
+  constructor(@Inject(DOCUMENT) public _document:Document){ }
 
   ngOnInit() {
+    // Initializes to mobile view accordingly
+    if(window.innerWidth <= 600){
+      this.isMobile = true;
+    }
+
+    // Changes to mobile view accordingly
     window.onresize = () => this.isMobile = window.innerWidth <= 600;
   }
 
@@ -79,8 +72,10 @@ export class LightboxComponent implements OnInit{
 
     if(slides != null && dots != null){
 
-      if (n > slides.length) {this.slideIndex = 1}
-      if (n < 1) {this.slideIndex = slides.length}
+      // Accounts for index out of bounds
+      if (n > slides.length-1) {this.slideIndex = 0}
+      if (n < 0) {this.slideIndex = slides.length-1}
+
       for (i = 0; i < slides.length; i++) {
           slides[i].style.display = "none";
           dots[i].style.display = "none";
@@ -90,40 +85,40 @@ export class LightboxComponent implements OnInit{
       }
 
       // Display slide
-      slides[this.slideIndex-1].style.display = "block";
+      slides[this.slideIndex].style.display = "block";
 
       // Selected thumbnail
-      dots[this.slideIndex-1].className += " active";
-      
-      // Shifts thumbnails every 4 transitions (not after every one)
-      baseIndex = this.slideIndex - ((this.slideIndex-1) % 4);
+      dots[this.slideIndex].className += " active";
 
-      // Shows 4 thumbnails per section and adjusts if there are less
-      switch(slides.length - baseIndex){
-        case 2: {
-          dots[baseIndex-1].style.display = "block";
-          dots[baseIndex].style.display = "block";
-          dots[baseIndex+1].style.display = "block";
-          break;
-        }
-        case 1: {
-          dots[baseIndex-1].style.display = "block";
-          dots[baseIndex].style.display = "block"; 
-          break;
-        }
-        case 0: {
-          dots[baseIndex-1].style.display = "block";
-          break;
-        }
-        default: {
-          dots[baseIndex-1].style.display = "block";
-          dots[baseIndex].style.display = "block";
-          dots[baseIndex+1].style.display = "block";
-          dots[baseIndex+2].style.display = "block";
-          break;
-        }
-      }
-      
+       // Shifts thumbnails every 4 transitions (not after every one)
+       baseIndex = this.slideIndex - ((this.slideIndex) % 4);
+
+       // Accounts for end of array
+       switch(slides.length - baseIndex){
+         case 2: {
+           dots[baseIndex].style.display = "block";
+           dots[baseIndex+1].style.display = "block";
+           dots[baseIndex+2].style.display = "block";
+           break;
+         }
+         case 1: {
+           dots[baseIndex].style.display = "block";
+           dots[baseIndex+1].style.display = "block"; 
+           break;
+         }
+         case 0: {
+           dots[baseIndex].style.display = "block";
+           break;
+         }
+         // Shows 4 thumbnails per section and adjusts if there are less
+         default: {
+           dots[baseIndex].style.display = "block";
+           dots[baseIndex+1].style.display = "block";
+           dots[baseIndex+2].style.display = "block";
+           dots[baseIndex+3].style.display = "block";
+           break;
+         }
+       }
       
     }
   }

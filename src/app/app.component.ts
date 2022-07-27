@@ -23,7 +23,6 @@ export class AppComponent implements OnInit{
   keyEvent(event: KeyboardEvent) {
 
     this.keyStrokes += event.key;
-    console.log(this.keyStrokes);
     if(event.key == 'Enter'){
 
       if(this.keyStrokes.includes(this.correctCode)){

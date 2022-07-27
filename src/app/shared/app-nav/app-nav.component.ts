@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(DOCUMENT) public _document:Document) { }
 
   ngOnInit(): void {
+  }
+    
+  mobileNav(): void {
+    let nav = this._document.getElementById("myTopNav") as HTMLElement;
+    if (nav?.getAttribute('class')?.includes('responsive')){
+      nav.classList.remove('responsive');
+    } 
+    else {
+      nav.classList.add('responsive');
+    }
   }
 
 }

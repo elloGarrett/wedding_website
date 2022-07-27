@@ -19,7 +19,7 @@
 
 <!-- Images used to open the lightbox in mobile view -->
 <div class="w3-row-padding w3-animate-opacity" *ngIf="isMobile">
-  <div class="w3-col l12 w3-margin-top" *ngFor="let photo of photosLQ; let i = index;">
+  <div class="w3-col l12 w3-margin-top w3-center" *ngFor="let photo of photosLQ; let i = index;">
     <img class="w3-image w3-round hover-shadow" src="{{photo.path}}" (click)="openModal();currentSlide(i);">
   </div>
 </div>

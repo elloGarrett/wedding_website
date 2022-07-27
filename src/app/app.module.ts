@@ -16,6 +16,8 @@ import { LightboxComponent } from './shared/lightbox/lightbox.component';
 import { SecretPageComponent } from './features/secret-page/secret-page.component';
 import { NoteblockComponent } from './shared/noteblock/noteblock.component';
 import { ImgLazyLoadingDirective } from './shared/img-lazy-loading.directive';
+import { RegistryCardComponent } from './shared/registry-card/registry-card.component';
+import { RsvpPageComponent } from './features/rsvp-page/rsvp-page.component';
 
 @NgModule({
   declarations: [
@@ -31,19 +33,22 @@ import { ImgLazyLoadingDirective } from './shared/img-lazy-loading.directive';
     LightboxComponent,
     SecretPageComponent,
     NoteblockComponent,
-    ImgLazyLoadingDirective
+    ImgLazyLoadingDirective,
+    RegistryCardComponent,
+    RsvpPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      {path: 'rsvp', component: HomePageComponent},
+      {path: 'home', component: HomePageComponent},
       {path: 'photos', component: PhotosPageComponent},
       {path: 'wedding-party', component: WeddingPartyPageComponent},
+      {path: 'rsvp', component: RsvpPageComponent},
       {path: 'registry', component: RegistryPageComponent},
       {path: 'secret', component: SecretPageComponent},
-      {path: '', redirectTo: '/rsvp', pathMatch: 'full'},
-      {path: '**', redirectTo: '/rsvp', pathMatch: 'full'},
+      {path: '', redirectTo: '/home', pathMatch: 'full'},
+      {path: '**', redirectTo: '/home', pathMatch: 'full'},
       // { path: '**', component: PageNotFoundComponent }
     ])
   ],

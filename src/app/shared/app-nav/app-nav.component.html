@@ -1,14 +1,19 @@
 <!-- Navbar (sticky top) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div class="w3-top topnav" id="myTopNav"> <!-- w3-display -->
+<div class="w3-top topnav w3-animate-opacity" id="myTopNav">
     <div class="w3-bar w3-white w3-center w3-padding w3-opacity-min textCenter">
-        <a href="/home" class="w3-bar-item w3-button wordStyle">Home</a>
-        <a href="/photos" class="w3-bar-item w3-button wordStyle">Photos</a>
-        <a href="/wedding-party" class="w3-bar-item w3-button wordStyle">Party</a>
-        <a href="/registry" class="w3-bar-item w3-button w3-hover-black wordStyle">Registry</a>
-        <!-- <a href="/rsvp" class="w3-bar-item w3-button wordStyle">RSVP</a> -->
-        <a class="icon" (click)="mobileNav()">
-            <i class="fa fa-bars"></i>
+        <a href="/home" class="w3-bar-item w3-button wordStyle mover">Home</a>
+        <a href="/photos" class="w3-bar-item w3-button wordStyle mover">Photos</a>
+        <a href="/wedding-party" class="w3-bar-item w3-button wordStyle mover">Party</a>
+        <a href="/registry" class="w3-bar-item w3-button wordStyle mover">Registry</a>
+        <a href="/rsvp" class="w3-bar-item w3-button wordStyle mover">RSVP</a>
+    </div>
+</div>
+<div id="iconContainer" class="topcorner topnav w3-animate-opacity">
+    <div class=" w3-padding w3-opacity-min">
+        <a id="animatedIcon" class="icon" (click)="mobileNav();changeIcon();">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
         </a>
     </div>
 </div>

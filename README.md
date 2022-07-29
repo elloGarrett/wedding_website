@@ -2,9 +2,9 @@
 
 ## Overview
 
-This [web application](https://garrett-and-claire.com/rsvp) was built as a means for inviting guests to my wedding.
+This [web application](https://garrett-and-claire.com) was built as a means for inviting guests to my wedding.
 
-Guests are able to obtain wedding details, RSVP, view photos of my fiancé and me, view the wedding party, and have access to the registry.
+Guests are able to obtain wedding details, view photos of my fiancé and me, view the wedding party, access the registry, and RSVP.
 
 ## Developement Details
 
@@ -18,7 +18,7 @@ This project uses [Firebase](https://firebase.google.com/) to host the website.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
 ## Build
 

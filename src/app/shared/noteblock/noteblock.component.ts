@@ -13,7 +13,11 @@ export class NoteblockComponent implements OnInit {
   base: string = "/assets/images/"
   noteFileName:string = 'Minecraft-NoteblockS.webp';
   noteClicked: boolean = false;
-  
+  Wait = {
+    song_title: 'Wait',
+    audio_file: 'https://audio.jukehost.co.uk/JEHNBZ0KCNVDMfbtD85Oa4qVgshQybZz',
+  };
+
   constructor() { }
 
   ngOnInit(): void {
@@ -30,11 +34,6 @@ export class NoteblockComponent implements OnInit {
       this.playWait();
     }
   }
-
-  Wait = {
-    song_title: 'Wait',
-    audio_file: 'https://audio.jukehost.co.uk/JEHNBZ0KCNVDMfbtD85Oa4qVgshQybZz',
-  };
 
   playWait() {
     audio.src = this.Wait.audio_file;

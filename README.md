@@ -6,7 +6,11 @@ This [web application](https://garrett-and-claire.com) was built as a means for 
 
 Guests are able to obtain wedding details, view photos of my fiancé and me, view the wedding party, access the registry, and RSVP.
 
+Enter the Konami Code for a special surprise.
+
 ## Developement Details
+
+Components were created following the [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself#:~:text=%22Don't%20repeat%20yourself%22,data%20normalization%20to%20avoid%20redundancy.) principle.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.4.
 
@@ -16,9 +20,9 @@ This project uses [SheetDB](https://sheetdb.io/) to store data taken in by the R
 
 This project uses [Firebase](https://firebase.google.com/) to host the website.
 
-## Development server
+## Development Server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
+Run `npm start` for a dev server. Navigate to `http://localhost:4200/`.
 
 ## Build
 

@@ -10,7 +10,7 @@ export class AppComponent implements OnInit{
   title = 'wedding_website';
 
   keyStrokes: string = "";
-  correctCode: string = 'ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightbaEnter';
+  correctCode: string = 'ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightba';
 
   constructor(private router: Router) { }
 
@@ -23,7 +23,7 @@ export class AppComponent implements OnInit{
   keyEvent(event: KeyboardEvent) {
 
     this.keyStrokes += event.key;
-    if(event.key == 'Enter'){
+    if(event.key == 'a'){
 
       if(this.keyStrokes.includes(this.correctCode)){
         this.router.navigate(['/secret']);

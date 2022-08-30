@@ -15,17 +15,26 @@ export class AppNavComponent implements OnInit {
     let currentUrl = window.location.href;
     let items = this._document.getElementsByTagName("A") as HTMLCollection;
     let itemRef: string | null;
+    let secretUrl = "/secret";
+    let selected = false;
 
     for(let i = 0; i < items.length; i++){
       itemRef = items[i].getAttribute('href');
 
       if(itemRef != null && currentUrl.includes(itemRef)){
        items[i].classList.add("active");
+       selected = true;
       }
       else{
         items[i].classList.remove("active");
       }
     }
+
+    // Accounts for redirect to home from unknown page
+    if(!selected && !currentUrl.includes(secretUrl)){
+      items[0].classList.add("active");
+    }
+
   }
 
   mobileNav(): void {

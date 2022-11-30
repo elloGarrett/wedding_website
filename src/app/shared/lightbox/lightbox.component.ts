@@ -9,6 +9,7 @@ import { DOCUMENT } from '@angular/common';
 export class LightboxComponent implements OnInit{
   slideIndex = 0;
   isMobile = false;
+  picsPerRow = [0, 1, 2, 3];  
 
   // Low quality images for preview and thumbnails
   @Input() photosLQ: Array<any> = [];
@@ -57,7 +58,7 @@ export class LightboxComponent implements OnInit{
     } 
   }
   public plusSlides(n: number) {
-    this.showSlides(this.slideIndex += n);
+    this.showSlides(this.slideIndex += n);   
   }
   
   public currentSlide(n: number) {
@@ -67,59 +68,19 @@ export class LightboxComponent implements OnInit{
   public showSlides(n: number) {
     let i;
     const slides = document.getElementsByClassName("mySlides") as HTMLCollectionOf<HTMLDivElement> | null;
-    const dots = document.getElementsByClassName("demo") as HTMLCollectionOf<HTMLImageElement> | null;
-    let baseIndex;
 
-    if(slides != null && dots != null){
+    if(slides != null ){
 
       // Accounts for index out of bounds
-      if (n > slides.length-1) {this.slideIndex = 0}
-      if (n < 0) {this.slideIndex = slides.length-1}
+      if (n > slides.length-1) {this.slideIndex = slides.length-1}
+      if (n < 0) {this.slideIndex = 0}
 
       for (i = 0; i < slides.length; i++) {
           slides[i].style.display = "none";
-          dots[i].style.display = "none";
-      }
-      for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
       }
 
       // Display slide
       slides[this.slideIndex].style.display = "block";
-
-      // Selected thumbnail
-      dots[this.slideIndex].className += " active";
-
-       // Shifts thumbnails every 4 transitions (not after every one)
-       baseIndex = this.slideIndex - ((this.slideIndex) % 4);
-
-       // Accounts for end of array
-       switch(slides.length - baseIndex){
-         case 2: {
-           dots[baseIndex].style.display = "block";
-           dots[baseIndex+1].style.display = "block";
-           dots[baseIndex+2].style.display = "block";
-           break;
-         }
-         case 1: {
-           dots[baseIndex].style.display = "block";
-           dots[baseIndex+1].style.display = "block"; 
-           break;
-         }
-         case 0: {
-           dots[baseIndex].style.display = "block";
-           break;
-         }
-         // Shows 4 thumbnails per section and adjusts if there are less
-         default: {
-           dots[baseIndex].style.display = "block";
-           dots[baseIndex+1].style.display = "block";
-           dots[baseIndex+2].style.display = "block";
-           dots[baseIndex+3].style.display = "block";
-           break;
-         }
-       }
-      
     }
   }
 }

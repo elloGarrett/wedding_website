@@ -1,18 +1,8 @@
 <!-- Images used to open the lightbox in pc view -->
 <div class="w3-row-padding w3-animate-opacity" *ngIf="!isMobile">
-  <div class="w3-third" >
+  <div class="w3-quarter" *ngFor="let pic of picsPerRow">
     <div class="w3-col l12" *ngFor="let photo of photosLQ; let i = index;">
-      <img class="w3-image w3-round hover-shadow w3-margin-top" src="{{photo.path}}" (click)="openModal();currentSlide(i);" *ngIf="i % 3 == 0">
-    </div>
-  </div>
-  <div class="w3-third" >
-    <div class="w3-col l12" *ngFor="let photo of photosLQ; let i = index;">
-      <img class="w3-image w3-round hover-shadow w3-margin-top" src="{{photo.path}}" (click)="openModal();currentSlide(i);" *ngIf="i % 3 == 1">
-    </div>
-  </div>
-  <div class="w3-third" >
-    <div class="w3-col l12" *ngFor="let photo of photosLQ; let i = index;">
-      <img class="w3-image w3-round hover-shadow  w3-margin-top" src="{{photo.path}}" (click)="openModal();currentSlide(i);" *ngIf="i % 3 == 2">
+      <img class="w3-image w3-round hover-shadow w3-margin-top" src="{{photo.path}}" (click)="openModal();currentSlide(i);" *ngIf="i % picsPerRow.length == pic">
     </div>
   </div>
 </div>
@@ -20,7 +10,7 @@
 <!-- Images used to open the lightbox in mobile view -->
 <div class="w3-row-padding w3-animate-opacity" *ngIf="isMobile">
   <div class="w3-col l12 w3-margin-top w3-center" *ngFor="let photo of photosLQ; let i = index;">
-    <img class="w3-image w3-round hover-shadow" src="{{photo.path}}" (click)="openModal();currentSlide(i);">
+    <img class="w3-image w3-round hover-shadow customImg" src="{{photo.path}}" (click)="openModal();currentSlide(i);">
   </div>
 </div>
   
@@ -35,10 +25,5 @@
     <!-- Next/previous controls -->
     <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
     <a class="next" (click)="plusSlides(1)">&#10095;</a>
-
-    <!-- Thumbnail image controls -->
-    <div class="column" *ngFor="let photo of photosLQ; let i = index;">
-      <img class="demo cursor w3-round" src="{{photo.path}}" style="width:100%" (click)="currentSlide(i)">
-    </div>
   </div> 
 </div>

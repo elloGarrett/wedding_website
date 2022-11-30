@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, HostListener, Inject, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-rsvp',
@@ -30,6 +30,14 @@ export class RsvpComponent implements OnInit {
     const modal = this._document.getElementById("id01") as HTMLDivElement;
     if(modal != null){
       modal.style.display = "none";
+    }
+  }
+
+  // Allows for keyboard navigation in the lightbox
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    if (event.key === 'Escape') {
+      this.closeRsvp();
     }
   }
 

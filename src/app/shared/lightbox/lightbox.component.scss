@@ -17,6 +17,10 @@
     width: 25%;
   }
 
+  .customImg{
+    width: 75%;
+  }
+
   /* The Modal (background) */
   .modal {
     display: none;
@@ -32,11 +36,21 @@
   }
   
   .modal-content {
+    // Center photos
+    text-align:center;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 30%; //Change me when final pictures arrive
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     position: relative;
-    margin: auto;
     padding: 0;
-    width: 40%; //Change me when final pictures arrive
-    max-width: 1200px;
+    // height: auto;
+    max-width: 100%;
   }
 
   /* Modal Content */
@@ -83,7 +97,7 @@
   .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 50%; // Button positions vertically
     width: auto;
     padding: 16px;
     margin-top: -50px;
@@ -96,7 +110,11 @@
     -webkit-user-select: none;
   }
   
-  /* Position the "next button" to the right */
+  /* Position the prev & next buttons */
+  .prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+  }
   .next {
     right: 0;
     border-radius: 3px 0 0 3px;

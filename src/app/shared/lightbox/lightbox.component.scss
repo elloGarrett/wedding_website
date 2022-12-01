@@ -61,6 +61,8 @@
       padding: 0;
       width: 100%; //Change me when final pictures arrive
       max-width: 1200px;
+      // Disable doubletap zoom
+      touch-action: manipulation;
     }
   }
 

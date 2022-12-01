@@ -18,6 +18,7 @@ import { NoteblockComponent } from './shared/noteblock/noteblock.component';
 import { ImgLazyLoadingDirective } from './shared/img-lazy-loading.directive';
 import { RegistryCardComponent } from './shared/registry-card/registry-card.component';
 import { RsvpPageComponent } from './features/rsvp-page/rsvp-page.component';
+import { CountDownComponent } from './shared/count-down/count-down.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { RsvpPageComponent } from './features/rsvp-page/rsvp-page.component';
     NoteblockComponent,
     ImgLazyLoadingDirective,
     RegistryCardComponent,
-    RsvpPageComponent
+    RsvpPageComponent,
+    CountDownComponent
   ],
   imports: [
     BrowserModule,

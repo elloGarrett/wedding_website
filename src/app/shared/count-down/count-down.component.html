@@ -1,9 +1,9 @@
 <div class="timer">
-  <h4>{{message}}</h4>
   <div *ngIf="displayCount">
-    <span id="days"> {{daysToDday}} </span>Day(s)
+    <span id="days">{{message}} <br> {{daysToDday}} </span>Day(s)
     <span id="hours" *ngIf="!isMobile"> {{hoursToDday}} Hour(s)</span>
     <span id="minutes" *ngIf="!isMobile"> {{minutesToDday}} Min(s)</span>
     <span id="seconds" *ngIf="!isMobile"> {{secondsToDday}} Sec(s)</span>
   </div>
+  <div *ngIf="!displayCount">{{message}}</div>
 </div>

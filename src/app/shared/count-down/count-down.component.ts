@@ -63,5 +63,4 @@ export class CountDownComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     if(this.subscription != undefined){this.subscription.unsubscribe();}
   }
-  
 }

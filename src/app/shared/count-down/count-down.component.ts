@@ -11,7 +11,7 @@ export class CountDownComponent implements OnInit, OnDestroy {
   private subscription: Subscription | undefined;
 
   public dateNow = new Date();
-  public dDay = new Date('June 16 2023 00:00:00');
+  public dDay = new Date('June 16 2023 17:00:00'); //4:00pm
   milliSecondsInASecond = 1000;
   hoursInADay = 24;
   minutesInAnHour = 60;

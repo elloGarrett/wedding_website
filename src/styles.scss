@@ -5,10 +5,11 @@ body, html {
     height: 100%;
 }
 p {line-height: 2}
-.bgimg, .bgimg2 {
+.bgimg, .bgimg2, .wdimg {
 min-height: 100%;
 background-position: top;
 background-size: cover;
 }
+.wdimg {background-image: url("./assets/images/newbg.jpg")}
 .bgimg {background-image: url("./assets/images/StandingPhoto.jpg")}
 .mcbg {background-image: url("./assets/images/MCBackgroundN.jpg")}

@@ -1,11 +1,19 @@
-.backgroundColor {
+.backgroundColor{
     background-color: var(--primary);
+}
+
+.customPadding{
+    padding-top: 64px;
 }
 
 .customImg{
     width:50%;
     margin:32px 0;
 }
+
+.detailsBackgroundColor{
+    background-color: var(--secondary);
+  }
 
 // Responsive nav
 @media screen and (max-width: 600px) {

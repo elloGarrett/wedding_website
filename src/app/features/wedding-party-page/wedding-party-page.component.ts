@@ -7,19 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeddingPartyPageComponent implements OnInit {
   base: string = "/assets/party-photos/";
-  base2: string = "/assets/test-party/";
   isMobile:boolean = false;
 
   maids = [
-    {path: `${this.base2}0.jpg`, name:"-----", title: "Maid of Honor", description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit'},
-    {path: `${this.base2}1.jpg`, name:"-----", title: "Bridesmaid", description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit'},
-    {path: `${this.base2}2.jpg`, name:"-----", title: "Bridesmaid", description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit'},
+    {path: `${this.base}Nicole_C.jpg`, name:"Nicole Shultz", title: "Matron of Honor", description: "Claire's best friend since 4th grade. Nicole has been there for every highlight and awkward moment since Claire can remember"},
+    {path: `${this.base}Esther_C.jpg`, name:"Esther Rose", title: "Maid of Honor", description: "Claire's college best friend and roommate for the past 3 years. Esther and Claire may be complete opposites, but it makes for the best dynamic duo"},
   ];
 
   grooms = [
-    {path: `${this.base}Zach_C.JPEG`, name:"Mr. Zach Bax", title: "Best Man", description: 'Mentor, coworker, friend, and sweety'},
-    {path: `${this.base}Joel_C.jpg`, name:"Joel Mason", title: "Groomsman", description: 'Little brother, friend, and sweety'},
-    {path: `${this.base}Chase_C.jpg`, name:"Chase Mason", title: "Groomsman", description: 'Littler brother, friend, and sweety'},
+    {path: `${this.base}Zach_C.JPEG`, name:"Mr. Zach Bax", title: "Best Man", description: 'Garrett’s close friend and colleague. Zach was a major influence in Garrett’s early college years, and he still guides him to this day. He is such a sweetie'},
+    {path: `${this.base}Joel_C.jpg`, name:"Joel Mason", title: "Groomsman", description: 'Garrett’s younger brother who is a straight up baller. Joel has always been loving and supportive in Garrett’s endeavors, and he is such a sweetie'},
+    {path: `${this.base}Chase_C.jpg`, name:"Chase Mason", title: "Groomsman", description: 'Garrett’s youngest brother who is the life of the party. Chase is always silly and uplifting when you need him the most, and he is such a sweetie'},
   ];
 
   constructor() { }

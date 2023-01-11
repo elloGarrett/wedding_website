@@ -3,14 +3,24 @@
       <h1 class="w3-center w3-text-grey"><b>Wedding Party</b></h1>
       
         <!-- Bridesmaids -->
-        <div class="w3-row-padding w3-animate-opacity">
-          <div class="w3-third  w3-center"  *ngFor="let maid of maids; let i = index;">  
-            <img class="w3-image w3-round w3-margin" src="{{maid.path}}">
-            <h2 class="w3-center">{{maid.name}}</h2>
+        <div class="w3-row-padding w3-animate-opacity w3-center">
+          <div class="w3-col l2 w3-center">&nbsp;</div>
+          <div class="w3-col l4 w3-center">  
+            <img class="w3-image w3-round w3-margin" src="{{maids[0].path}}">
+            <h2 class="w3-center">{{maids[0].name}}</h2>
             <div class="border"></div>
-            <p class="w3-center">{{maid.title}}</p>
-            <p>{{maid.description}}</p>
+            <p class="w3-center">{{maids[0].title}}</p>
+            <p>{{maids[0].description}}</p>
           </div>
+
+          <div class="w3-col l4 w3-center">  
+            <img class="w3-image w3-round w3-margin" src="{{maids[1].path}}">
+            <h2 class="w3-center">{{maids[1].name}}</h2>
+            <div class="border"></div>
+            <p class="w3-center">{{maids[1].title}}</p>
+            <p>{{maids[1].description}}</p>
+          </div>
+          <div class="w3-col l2 w3-center">&nbsp;</div>
         </div>    
         
         <div class="w3-padding-16" >&nbsp;</div>

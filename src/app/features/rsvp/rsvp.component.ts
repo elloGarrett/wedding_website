@@ -33,6 +33,20 @@ export class RsvpComponent implements OnInit {
     }
   }
 
+  public showToast(): void {
+    // Get the snackbar DIV
+    const sb = this._document.getElementById("snackbar") as HTMLDivElement;
+    // Add the "show" class to DIV
+    sb.className = "show";
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function(){ sb.className = sb.className.replace("show", ""); }, 3000);
+  }
+
+  public submitRsvp(): void {
+    this.closeRsvp();
+    this.showToast();
+  }
+
   // Allows for keyboard navigation in the lightbox
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {

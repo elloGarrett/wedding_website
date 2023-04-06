@@ -26,10 +26,10 @@
          <div class="w3-row">
            <!-- Submit buttons -->
            <div class="w3-half">
-             <button id="yesSubmit" onclick="document.getElementById('id01').style.display='none'" value="yes" name="data[Attendance]" type="sumbit" class="w3-button w3-block w3-green">Going</button>
+             <button id="yesSubmit" (click)="submitRsvp()" value="yes" name="data[Attendance]" type="sumbit" class="w3-button w3-block w3-green">Going</button>
            </div>
            <div class="w3-half">
-             <button id="noSubmit" onclick="document.getElementById('id01').style.display='none'" value="no" name="data[Attendance]" type="submit" class="w3-button w3-block w3-red">Can't come</button>
+             <button id="noSubmit" (click)="submitRsvp()" value="no" name="data[Attendance]" type="submit" class="w3-button w3-block w3-red">Can't come</button>
            </div> 
          </div>        
        </form>
@@ -41,13 +41,13 @@
                  method : "POST",
                  body: new FormData(document.getElementById("sheetdb-form")),
              }).then(
-                 // response => response.json()
+                //  response => response.json()
              ).then((html) => {
                // you can put any JS code here
-               alert('Thank You!')
              });
            });
          </script>
       </div>
     </div>
   </div>
+  <div id="snackbar">RSVP Success!</div>
